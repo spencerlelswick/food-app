@@ -14,8 +14,8 @@ export const Restaurant = (props) => {
                 <div className='Restaurant-information'>
                     <div className='Restaurant-address'>
                     <p>{props.restaurant.city}</p>
-                    <p>{props.restaurant.state}</p>
-                    <p>{props.restaurant.zipCode}</p>
+                    <p>{props.restaurant.state} {props.restaurant.zipCode}</p>
+                    <p>{props.restaurant.address}</p>
                     </div>
                     <div className="Restaurant-reviews">
                     <h3>{props.restaurant.category}</h3>

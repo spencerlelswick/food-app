@@ -5,8 +5,8 @@ import { useState } from 'react';
 export const Search = () => {
 
     const [search, setSearch] = useState({
-        'term':'',
-        'location': '',
+        'term':'a',
+        'location': 'a',
         'sortBy': 'best_match',
     });
 
@@ -23,20 +23,24 @@ export const Search = () => {
         return '';
     }
 
-    const handleSortByChange = (sortByOption) => {
+    const handleSortByChange = (sortByOptionValue, search) => {
         setSearch( {
-            sortBy: sortByOption
+            ...search,
+            sortBy: sortByOptionValue
         })
     }
 
-    const handleTermChange = (event) => {
+    const handleTermChange = (event, search) => {
+
         setSearch({
+            ...search,
             term: event.target.value
         })
     }
     
-    const handleLocationChange = (event) => {
+    const handleLocationChange = (event, search) => {
         setSearch({
+            ...search,
             location: event.target.value
         })
     }
@@ -45,27 +49,27 @@ export const Search = () => {
         console.log(search)
     }
 
-    function renderSortByOption() {
+    const renderSortByOption = () => {
         return Object.keys(sortByOptions).map((sortByOption) => {
             let sortByOptionValue = sortByOptions[sortByOption];
-            return <li onClick={handleSortByChange.bind(this, sortByOptionValue)} className={getSortByClass(sortByOptionValue)} key={sortByOptionValue}>{sortByOption}</li>
+            return <li onClick={() => handleSortByChange(sortByOptionValue, search)} className={getSortByClass(sortByOptionValue)} key={sortByOptionValue}>{sortByOption}</li>
         })
         
     }
 
     return (
         <div className="SearchBar">
-            <video className="SearchBarVideo"  playsinline autoplay muted loop>
-                <source  src='/Videos/background_search.mp4' type="video/mp4" />
+            <video className="SearchBarVideo"  autoPlay playsInline  muted loop>
+                <source  src='/Videos/background_search.mp4'  type="video/mp4" />
             </video>
             <div className="SearchBar-sort-options ">
                 <ul>
-                {renderSortByOption()}
+                {renderSortByOption(search)}
                 </ul>
             </div>
             <div className="SearchBar-fields ">
-                <input onChange={handleTermChange} placeholder="Find Restaurants" />
-                <input onChange={handleLocationChange} placeholder="address, neighborhood, city, state or zip" />
+                <input onChange={(event) => handleTermChange(event, search)} placeholder="Find Restaurants"  value={search.term} />
+                <input onChange={(event) => handleLocationChange(event, search)} placeholder="address, neighborhood, city, state or zip" value={search.location} />
             </div>
             <div onClick={handleSubmit} className="SearchBar-submit">
                 <a>SEARCH</a>

@@ -17,9 +17,45 @@ const restaurant = {
   reviewCount: 2498
 }
 
-const restaurants = [restaurant,restaurant,restaurant,restaurant,restaurant,restaurant];
+const restaurants = [
+  {
+    imageSrc: 'https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    name: 'Spenceroncini\'s Ristorante Italiano',
+    address: '960 Louisville Rd',
+    city: 'Louisville',
+    state: 'KY',
+    zipCode: '40202',
+    category: 'Italian',
+    rating: 4.5,
+    reviewCount: 2498
+  },
+  {
+    imageSrc: 'https://images.pexels.com/photos/884596/pexels-photo-884596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    name: 'Elswicksan Japanese Steakhouse',
+    address: '231 Kentucky Rd',
+    city: 'Louisville',
+    state: 'KY',
+    zipCode: '40202',
+    category: 'Japanese',
+    rating: 4.9,
+    reviewCount: 598
+  },
+  {
+    imageSrc: 'https://images.pexels.com/photos/4946442/pexels-photo-4946442.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    name: 'Chez Elswique',
+    address: '230 Crestwood Blvd',
+    city: 'Louisville',
+    state: 'KY',
+    zipCode: '40202',
+    category: 'French',
+    rating: 4.8,
+    reviewCount: 228
+  },
+];
 
 export const  App = () => {
+
+
   return (
     <div className="App">
       
