@@ -55,12 +55,15 @@ const restaurants = [
 
 export const  App = () => {
 
+  const searchYelp = (params) => {
+    console.log('Searching yelp for ' + params.term + ' in ' + params.location + ' with ' + params.sortBy + ' criterion' )
+  }
 
   return (
     <div className="App">
       
       <h1>Little Avac<img className="logo" src={logo} />do</h1>
-      <Search />
+      <Search searchYelp={searchYelp} />
       <RestaurantList restaurant={restaurants}/>
     </div>
   );

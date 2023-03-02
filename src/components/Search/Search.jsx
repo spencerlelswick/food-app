@@ -2,7 +2,7 @@ import React from 'react';
 import './Search.css'
 import { useState } from 'react';
 
-export const Search = () => {
+export const Search = (props) => {
 
     const [search, setSearch] = useState({
         'term':'a',
@@ -45,8 +45,8 @@ export const Search = () => {
         })
     }
 
-    const handleSubmit = (event) => {
-        console.log(search)
+    const handleSubmit = () => {
+        props.searchYelp(search);
     }
 
     const renderSortByOption = () => {
@@ -71,7 +71,7 @@ export const Search = () => {
                 <input onChange={(event) => handleTermChange(event, search)} placeholder="Find Restaurants"  value={search.term} />
                 <input onChange={(event) => handleLocationChange(event, search)} placeholder="address, neighborhood, city, state or zip" value={search.location} />
             </div>
-            <div onClick={handleSubmit} className="SearchBar-submit">
+            <div onClick={() => handleSubmit ()} className="SearchBar-submit">
                 <a>SEARCH</a>
             </div>
         </div>
