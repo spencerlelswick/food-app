@@ -3,10 +3,21 @@
 html {
     font-size: 18px;
   }
+
+  
+  .logo {
+    height: 32px;
+    width: 32px;
+  }
   
   @media only screen and (max-width: 560px) {
     html {
       font-size: 15px;
+    }  
+
+    .logo {
+      height: 25px;
+      width: 25px;
     }
   }
   
@@ -47,8 +58,4 @@ html {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
-  }
-
-  .logo {
-    height: inherit;
   }
