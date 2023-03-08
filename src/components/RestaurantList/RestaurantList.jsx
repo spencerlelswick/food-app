@@ -6,8 +6,8 @@ export const RestaurantList = (props) => {
 
     return (
         <div className='RestaurantList'>
-            {props.restaurant.map((restaurant) => {
-                return <Restaurant restaurant={restaurant} key={restaurant.name}/>
+            {props.restaurants.map((restaurant) => {
+                return <Restaurant key={restaurant.id} restaurant={restaurant} />
             })}
         </div>
     );

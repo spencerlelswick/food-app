@@ -5,8 +5,8 @@ import { useState } from 'react';
 export const Search = (props) => {
 
     const [search, setSearch] = useState({
-        'term':'a',
-        'location': 'a',
+        'term':'',
+        'location': '',
         'sortBy': 'best_match',
     });
 
@@ -71,7 +71,7 @@ export const Search = (props) => {
                 <input onChange={(event) => handleTermChange(event, search)} placeholder="Find Restaurants"  value={search.term} />
                 <input onChange={(event) => handleLocationChange(event, search)} placeholder="address, neighborhood, city, state or zip" value={search.location} />
             </div>
-            <div onClick={() => handleSubmit ()} className="SearchBar-submit">
+            <div onClick={() => handleSubmit()} className="SearchBar-submit">
                 <a>SEARCH</a>
             </div>
         </div>
