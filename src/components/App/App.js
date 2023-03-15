@@ -21,7 +21,7 @@ export const  App = () => {
   return (
     <div className="App">
       
-      <h1>Little Avac<img className="logo" src={logo} />do</h1>
+      <h1>Little Avoc<img className="logo" src={logo} />do</h1>
       <Search searchYelp={searchYelp} />
       <RestaurantList restaurants={restaurants}/>
     </div>
