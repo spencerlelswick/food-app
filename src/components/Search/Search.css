@@ -48,6 +48,7 @@
   .SearchBar-sort-options li.active:hover {
     border-bottom: 5px solid #568203;
     color: #7ec200;
+    user-select: none;
   }
   
   .SearchBar-fields {
@@ -76,6 +77,7 @@
   .SearchBar-submit {
     text-align: center;
     z-index: 1;
+    user-select: none;
   }
   
   .SearchBar-submit a {

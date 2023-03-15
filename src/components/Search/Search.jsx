@@ -46,7 +46,8 @@ export const Search = (props) => {
     }
 
     const handleSubmit = () => {
-        props.searchYelp(search);
+        if(search.location !== '')
+            props.searchYelp(search); 
     }
 
     const renderSortByOption = () => {
